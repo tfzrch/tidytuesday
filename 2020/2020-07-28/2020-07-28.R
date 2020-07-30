@@ -7,6 +7,7 @@ requireNamespace("ggridges")
 requireNamespace("magrittr")
 requireNamespace("factoextra")
 requireNamespace("janitor")
+requireNamespace("magick")
 
 # ggplot theme ----
 theme_antarctic <- function() {
@@ -160,6 +161,18 @@ patches <- patches +
 
 
 png(here("2020", "2020-07-28", "2020-07-28-palmer-penguins-01.png"),
-         width = 10, height = 8, units = "in", res = 200)
+         width = 10, height = 8, units = "in", res = 330)
 patches
 dev.off()
+
+# Add small version of PNG ----
+image_original <- magick::image_read(
+  here("2020", "2020-07-28", 
+       "2020-07-28-palmer-penguins-01.png")
+  )
+
+magick::image_resize(image_original, "700") %>%
+  magick::image_write(
+    here("2020", "2020-07-28", 
+         "2020-07-28-palmer-penguins-01-small.png")
+  )
