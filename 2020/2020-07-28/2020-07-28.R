@@ -90,7 +90,7 @@ plots[["scaled_metrics_species_sex"]] <- ggplot(penguins_scaled_tidy) +
              inherit.aes = T, shape = 21, size = 2.5, stroke = .5) +
   scale_fill_manual(values = sex_palette) +
   labs(x = "Scaled Metric", y = "Species", fill = "Sex", col = "Sex",
-       title = "Scaled and Centred Metrics\nby Species and Sex",
+       title = "Scaled and Centred Metrics\nby Species and Sex (Density)",
        subtitle = "Points show mean for each group") +
   facet_grid(metric~.)
 plots$scaled_metrics_species_sex
@@ -108,7 +108,8 @@ plots[["body_mass_species_sex"]] <- ggplot(body_mass_clean) +
   geom_point(data = body_mass_mean, shape = 21, stroke = .5, size = 2.5) +
   scale_fill_manual(values = sex_palette) +
   labs(x = "Body Mass (g)", y = "Species", fill = "Sex",
-       title = "Body Mass by Species and Sex\n(Density)") +
+       title = "Body Mass by Species and Sex\n(Density)",
+       subtitle = "Points show mean for each group") +
   facet_grid()
 
 plots$body_mass_species_sex
