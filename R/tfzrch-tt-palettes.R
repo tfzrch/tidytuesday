@@ -9,3 +9,12 @@ tfzrch_tt_palettes[["desert"]] <- c(
   "light blue" = "#bbdef0", 
   "cream" = "#00a6a6"
 )
+
+# * Cafe ----
+tfzrch_tt_palettes[["cafe"]] <- c(
+  gainsboro = "#dbdbdb",
+  bluemunsel = "#4b97aa",
+  darkelectric = "#406277",
+  gunmetal = "#16262e",
+  khakiweb = "#ccb9a3"
+)
